@@ -1,24 +1,28 @@
-# Attendance System (Django)
+Attendance System (Django)
+Setup
+Clone this repository and enter the directory:
 
-## Setup
+powershell
+git clone https://github.com/jainroy/attendance_system.git
+cd attendance_system
+Create a virtual environment and install dependencies:
 
-1. Clone this repository and enter the directory:
-    git clone <repo-url>
-    cd attendance_system
+powershell
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+Run migrations:
 
-2. Create virtual environment and install dependencies:
-    python -m venv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
+powershell
+python manage.py makemigrations
+python manage.py migrate
+Create a superuser (for admin access):
 
-3. Run migrations:
-    python manage.py makemigrations
-    python manage.py migrate
+powershell
+python manage.py createsuperuser
+Run the server locally:
 
-4. Create a superuser (for admin access):
-    python manage.py createsuperuser
-
-5. Run server locally:
-    python manage.py runserver
-
-6. Access at http://localhost:8000/
+powershell
+python manage.py runserver
+Access the application at:
+http://localhost:8000/
