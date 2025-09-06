@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Attendance History</h2>
+  <table>
+    <tr><th>Date</th><th>Status</th></tr>
+    {% for record in records %}
+      <tr><td>{{ record.date }}</td><td>{{ record.status }}</td></tr>
+    {% endfor %}
+  </table>
+{% endblock %}

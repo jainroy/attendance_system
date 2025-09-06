@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance System</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<nav>
+  {% if user.is_authenticated %}
+    <span>Welcome, {{ user.username }}!</span>
+    <span class="nav-links">
+      <a href="{% url 'dashboard' %}">Dashboard</a>
+      <a href="{% url 'history' %}">History</a>
+      <a href="{% url 'logout' %}">Logout</a>
+    {% if user.is_staff %}
+      <span class="nav-links">
+        <a href="{% url 'admin_view' %}">Admin: View All</a>
+    {% endif %}
+  {% else %}
+    <span class="nav-links">
+      <a href="{% url 'login' %}">Login</a>
+      <a href="{% url 'register' %}">Register</a>
+  {% endif %}
+</nav>
+<div class="container">
+  {% if messages %}
+    {% for message in messages %}
+      <div>{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+  {% block content %}{% endblock %}
+</div>
+</body>
+</html>

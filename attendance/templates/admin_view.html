@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>All Users' Attendance</h2>
+  <table>
+    <tr><th>User</th><th>Date</th><th>Status</th></tr>
+    {% for r in records %}
+      <tr><td>{{ r.user.username }}</td><td>{{ r.date }}</td><td>{{ r.status }}</td></tr>
+    {% endfor %}
+  </table>
+{% endblock %}

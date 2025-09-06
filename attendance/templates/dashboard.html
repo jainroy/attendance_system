@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Today's Attendance</h2>
+  {% if attendance_marked %}
+    <p>Status: {{ attendance.status }}</p>
+  {% else %}
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" name="status" value="Present">Mark Present</button>
+      <button type="submit" name="status" value="Absent">Mark Absent</button>
+    </form>
+  {% endif %}
+{% endblock %}

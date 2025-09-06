@@ -1,0 +1,25 @@
+body { font-family: sans-serif; background: #f5f5f5;}
+form, table { margin: 20px 0; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #ddd; padding: 8px; }
+tr:nth-child(even) { background: #f2f2f2; }
+th { background: #333; color: #fff; }
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 10px;
+}
+
+nav a {
+  /* You can still keep margin if you want spacing, but gap is often better with flex */
+  text-decoration: none;
+  margin: 0 5px;
+}
+button { margin: 5px; padding: 6px 12px; }
+h2 { color: #333; }
+.container { width: 60%; margin: auto; background: #fff; padding: 20px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.08);}
